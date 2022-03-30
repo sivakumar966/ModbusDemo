@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Modbus Demo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-col size="3">
+      <ion-button (click)="Open()" expand="block"> Open </ion-button>
+    </ion-col>
+    <ion-col size="3">
+      <ion-button (click)="Close()" expand="block"> Close </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="3">
+      <ion-button (click)="WriteOne()" expand="block"> Write one </ion-button>
+    </ion-col>
+
+
+    <ion-col size="3">
+      <ion-button (click)="WriteTwo()" expand="block"> Write two </ion-button>
+    </ion-col>
+
+    <ion-col size="3" *ngIf="!isReading">
+      <ion-button (click)="ReadStatus()" expand="block"> Read </ion-button>
+    </ion-col>
+
+    <ion-col size="3" *ngIf="isReading">
+      <ion-button (click)="StopReading()" expand="block"> Stop </ion-button>
+    </ion-col>
+
+
+
+    <ion-col size="3">
+      <ion-button (click)="ManualReset()" expand="block"> Manual Reset </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="12">
+      <ion-text>
+        <span>Status : </span> <span> {{status_code}} </span>
+      </ion-text>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
